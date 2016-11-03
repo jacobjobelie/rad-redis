@@ -35,10 +35,10 @@ const SERVER = function(options) {
 
   app.use('/', router)
 
-  let _port = 6380
+  let _port = process.env.REDIS_PORT || 6380
   var server = app.listen(_port)
 
-  console.log(`App running on ${_port}`);
+  console.log(`Rad redis App running on ${_port}`);
 
 }
 

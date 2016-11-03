@@ -45,6 +45,8 @@ const BASE = function(router, redisApi, options) {
   router.post(`/${options.host}hset`, function(req, res) {
     let { value, field, key } = req.body
     console.log('hset', key);
+    console.log('hset', field);
+    console.log('hset', value);
     if (!value) {
       res.send(Object.assign({}, ERR))
     } else {
@@ -62,6 +64,7 @@ const BASE = function(router, redisApi, options) {
   router.post(`/${options.host}hmset`, function(req, res) {
     let { value, key } = req.body
     console.log('hmset', key);
+    console.log('hmset', value);
     if (!value) {
       res.send(Object.assign({}, ERR))
     } else {
