@@ -3,6 +3,8 @@ const { SUCCESS, ERR, formSuccessResponse } = require('./constants')
 const BASE = function(router, redisApi, options) {
 
   router.post(`/${options.host}del`, function(req, res) {
+    let { key } = req.body
+    console.log("key", key);
     redisApi.del(req.body.key)
       .then(data => {
         res.send(Object.assign({}, SUCCESS))

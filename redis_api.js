@@ -2,10 +2,16 @@ const {youtube} = require('@samelie/chewb-redis');
 
 /*redis client*/
 const REDIS = (() => {
+  let host = process.env.REDIS_HOST || '127.0.0.1'
+  let port = process.env.REDIS_PORT || '6379'
+
+  let isLocal = host === '127.0.0.1'
+
   return new youtube({
-    host:process.env.REDIS_HOST || '127.0.0.1',
-    port:process.env.REDIS_PORT || '6379', //redis port
-  })
+    host:host,
+    port:port
+  }, isLocal)
+
 })()
 
 module.exports = REDIS

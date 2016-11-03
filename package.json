@@ -2,6 +2,11 @@
   "name": "@samelie/rad-redis",
   "version": "0.2.0",
   "main": "index.js",
+  "author": {
+    "name": "Sam Elie",
+    "email": "samradelie@gmail.com",
+    "url": "https://github.com/samelie"
+  },
   "scripts": {},
   "dependencies": {
     "@samelie/chewb-redis": "*",
