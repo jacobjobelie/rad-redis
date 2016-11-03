@@ -1,27 +1,17 @@
-express server api for redis
-@samelie/chewb-redis
+##Redis-nodejs-express server and routing
 
-{
-server() // new express
+Uses `@samelie/chewb-redis`
+which is a wrapper around [redis](https://www.npmjs.com/package/redis) package.
 
-}
+This project can be used to start a fresh instance of `@samelie/chewb-redis` and give you an express server with an API to hit.
 
-BASE_OPTIONS = {
+It can also give you the routing for an existing express server.
 
-}
+`index.js`
 
-BASE URl = redis
-
-  router.post(`/${BASE_URL}del`
-  router.post(`/${BASE_URL}hmget`
-  router.post(`/${BASE_URL}hmset`
-  router.get('/',
-
-  router.post(`/${BASE_URL}youtube/get-sidx`,
-  router.post(`/${BASE_URL}youtube/set-sidx`,
-  router.post(`/${BASE_URL}youtube/get-youtube-playlist-items`,
-  router.post(`/${BASE_URL}youtube/set-uploaded-video-playlist`,
-  router.post(`/${BASE_URL}youtube/get-uploaded-playlist-items`,
-  router.post(`/${BASE_URL}youtube/get-uploaded-playlist-report`
-
-
+`
+  return {
+    server: server,
+    routes: routes
+  }
+`

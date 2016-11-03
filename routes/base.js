@@ -24,7 +24,7 @@ const BASE = function(router, redisApi, options) {
       .catch(err => {
         res.send(Object.assign({}, { err: err }, ERR))
       })
-  }
+  })
 
   router.post(`/${options.host}hmget`, function(req, res) {
     let { key } = req.body
