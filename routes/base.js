@@ -12,19 +12,49 @@ const BASE = function(router, redisApi, options) {
       })
   })
 
-  router.post(`/${options.host}hmget`, function(req, res) {
+  router.post(`/${options.host}hget`, function(req, res) {
     let { key } = req.body
-    console.log("hmget", key);
-    redisApi.hmget(req.body.key)
+    console.log("hget", key);
+    redisApi.hget(req.body.key)
       .then(data => {
-        console.log("hmget sucess", key);
-        console.log(data);
+        console.log("hget sucess", key);
         //needs to be valid json
         res.send(formSuccessResponse(data))
       })
       .catch(err => {
         res.send(Object.assign({}, { err: err }, ERR))
       })
+  }
+
+  router.post(`/${options.host}hmget`, function(req, res) {
+    let { key } = req.body
+    console.log("hmget", key);
+    redisApi.hmget(req.body.key)
+      .then(data => {
+        console.log("hmget sucess", key);
+        //needs to be valid json
+        res.send(formSuccessResponse(data))
+      })
+      .catch(err => {
+        res.send(Object.assign({}, { err: err }, ERR))
+      })
+  })
+
+  router.post(`/${options.host}hset`, function(req, res) {
+    let { value, field, key } = req.body
+    console.log('hset', key);
+    if (!value) {
+      res.send(Object.assign({}, ERR))
+    } else {
+      redisApi.hset(key, field, value)
+        .then(data => {
+          console.log('hset success', key);
+          res.send(Object.assign({}, SUCCESS))
+        })
+        .catch(err => {
+          res.send(Object.assign({}, { err: err }, ERR))
+        })
+    }
   })
 
   router.post(`/${options.host}hmset`, function(req, res) {
