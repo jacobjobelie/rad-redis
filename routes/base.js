@@ -21,7 +21,10 @@ const BASE = function(router, redisApi, options) {
       .then(data => {
         console.log("hget sucess", key);
         //needs to be valid json
-        res.send(formSuccessResponse(data))
+        console.log(data);
+        let _r = formSuccessResponse(data)
+        console.log(_r);
+        res.send(_r)
       })
       .catch(err => {
         res.send(Object.assign({}, { err: err }, ERR))
@@ -35,6 +38,9 @@ const BASE = function(router, redisApi, options) {
       .then(data => {
         console.log("hmget sucess", key);
         //needs to be valid json
+        console.log(data);
+        let _r = formSuccessResponse(data)
+        console.log(_r);
         res.send(formSuccessResponse(data))
       })
       .catch(err => {
@@ -44,9 +50,10 @@ const BASE = function(router, redisApi, options) {
 
   router.post(`/${options.host}hset`, function(req, res) {
     let { value, field, key } = req.body
+    console.log('\n');
     console.log('hset', key);
     console.log('hset', field);
-    console.log('hset', value);
+    console.log('hset', value.length);
     if (!value) {
       res.send(Object.assign({}, ERR))
     } else {
