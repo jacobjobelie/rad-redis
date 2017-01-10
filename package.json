@@ -9,7 +9,7 @@
   },
   "scripts": {},
   "dependencies": {
-    "@samelie/chewb-redis": "*",
+    "@samelie/chewb-redis": "git://github.com/samradical/chewb-redis.git",
     "bluebird": "^3.4.6",
     "body-parser": "~1.0.0",
     "connect-busboy": "latest",
