@@ -12,6 +12,7 @@
     "@samelie/chewb-redis": "git://github.com/samradical/chewb-redis.git",
     "bluebird": "^3.4.6",
     "body-parser": "~1.0.0",
+    "colors": "^1.1.2",
     "connect-busboy": "latest",
     "connect-flash": "~0.1.1",
     "cookie-parser": "~1.0.0",

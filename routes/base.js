@@ -47,7 +47,7 @@ const BASE = function(router, redisApi, options) {
       })
   })
   router.post(`/${options.host}hmget`, function(req, res) {
-    let { key,field } = req.body
+    let { key, field } = req.body
     console.log("hmget", key, field);
     redisApi.hmget(key, field)
       .then(data => {
@@ -83,13 +83,13 @@ const BASE = function(router, redisApi, options) {
   })
 
   router.post(`/${options.host}hmset`, function(req, res) {
-    let { value,field, key } = req.body
+    let { value, field, key } = req.body
     console.log('hmset', key);
     console.log('hmset', value);
     if (!value) {
       res.send(Object.assign({}, ERR))
     } else {
-      redisApi.hmset(key,field, value)
+      redisApi.hmset(key, field, value)
         .then(data => {
           console.log('hmset success', key);
           res.send(Object.assign({}, SUCCESS))
@@ -147,6 +147,10 @@ const BASE = function(router, redisApi, options) {
 
   router.get('/', function(req, res) {
     res.status(200).send('nothing to see here...');
+  });
+
+  router.get('/testing', function(req, res) {
+    res.status(200).send('testing...');
   });
 }
 

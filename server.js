@@ -12,7 +12,7 @@ const api = require('./redis_api')
 const routes = require('./routes/index')
 const {BASE_OPTIONS} = require('./routes/constants')
 
-const SERVER = function(options) {
+const SERVER = function(options= {}) {
 
   var server;
   var app = express();

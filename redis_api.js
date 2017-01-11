@@ -1,4 +1,4 @@
-const {youtube} = require('@samelie/chewb-redis');
+const youtube= require('@samelie/chewb-redis');
 
 /*redis client*/
 const REDIS = (() => {
